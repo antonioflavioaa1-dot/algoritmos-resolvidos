@@ -1,0 +1,26 @@
+// Algoritmo 43
+// Enunciado: Ler um número e calcular seu logaritmo na base 10.
+
+import kotlin.math.*
+
+private fun lerInt(mensagem: String): Int {
+    print(mensagem)
+    return readLine()?.trim()?.toIntOrNull() ?: 0
+}
+
+private fun lerDouble(mensagem: String): Double {
+    print(mensagem)
+    val entrada = readLine()?.trim()?.replace(',', '.')
+    return entrada?.toDoubleOrNull() ?: 0.0
+}
+
+private fun lerTexto(mensagem: String): String {
+    print(mensagem)
+    return readLine()?.trim().orEmpty()
+}
+
+fun main() {
+    val numero = lerDouble("Digite o logaritmando: ")
+    if (numero > 0) println("Logaritmo na base 10: ${ln(numero) / ln(10.0)}")
+    else println("O logaritmo real exige um número maior que zero.")
+}
